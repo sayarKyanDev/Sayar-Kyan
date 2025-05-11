@@ -5,90 +5,133 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Me – Sayar Kyan</title>
   <style>
+    /* General body styling */
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
+      font-family: 'Arial', sans-serif;
+      background-color: #f1f1f1;
       margin: 0;
       padding: 0;
-      background-color: #f9f9f9;
       color: #333;
+      line-height: 1.6;
     }
 
+    /* Main container */
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 50px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      background: #fff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     h1 {
-      color: #006AEE;
       text-align: center;
-    }
-
-    .about-text {
-      font-size: 18px;
-      color: #555;
-      line-height: 1.8;
+      color: #006AEE;
+      font-size: 36px;
       margin-bottom: 20px;
     }
 
-    .more-text {
-      display: none;
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .section h2 {
+      color: #333;
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .section p {
       font-size: 18px;
       color: #555;
       line-height: 1.8;
-      margin-bottom: 20px;
     }
 
+    /* Button Styling */
     .btn-show-more {
       display: inline-block;
       background-color: #006AEE;
       color: white;
-      padding: 10px 20px;
+      padding: 12px 30px;
       font-size: 16px;
-      border: none;
-      border-radius: 5px;
+      border-radius: 25px;
       cursor: pointer;
-      text-align: center;
       transition: background-color 0.3s ease;
+      text-align: center;
+      border: none;
+      margin-top: 20px;
     }
 
     .btn-show-more:hover {
-      background-color: #004a99;
+      background-color: #0056b3;
     }
 
+    .more-text {
+      display: none;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        padding: 30px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .section h2 {
+        font-size: 22px;
+      }
+    }
   </style>
 </head>
 <body>
 
   <div class="container">
     <h1>About Me</h1>
-    <p class="about-text">
-      Hello! I'm <strong>Hein Ko Ko Aung</strong>, a young and passionate programmer from <strong>Myanmar</strong>.
-      I started my journey in the world of IT back in <strong>2019</strong> when I was just 12 years old.
-    </p>
 
-    <p class="about-text">
-      Since then, I’ve been learning various programming languages, building small projects, and solving real-world problems
-      I encounter along the way. I enjoy experimenting with new tools and technologies and always strive to improve my skills.
-    </p>
+    <div class="section">
+      <h2>Who am I?</h2>
+      <p>
+        Hi! I’m <strong>Hein Ko Ko Aung</strong>, a passionate self-taught programmer from <strong>Myanmar</strong>.  
+        I’m on a mission to grow my skills and become a professional Android developer.  
+        I started my journey in IT in <strong>2019</strong> when I was just 12 years old. Since then, I’ve been continuously learning and building projects.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>My Goal</h2>
+      <p>
+        My ultimate goal is to become a proficient Android Developer, building mobile applications that can make a difference.  
+        I strive to create professional, user-friendly applications that provide meaningful solutions to everyday problems.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>My Experience</h2>
+      <p>
+        I have worked on various Android applications, constantly improving my skills with Java, Kotlin, and Flutter.  
+        I enjoy solving coding problems, experimenting with new technologies, and learning from every project I undertake.
+      </p>
+    </div>
 
     <div class="more-text" id="moreText">
-      <p>
-        This blog is my personal platform to share my experiences, tips, and mistakes, hoping to help others in their programming
-        journey. Learning programming can be challenging, but it’s also exciting and rewarding when you start solving real problems.
-      </p>
-      <p>
-        I believe that learning by doing is the most powerful method — break things, fix them, and keep growing. The best part about
-        programming is that there's always something new to learn, and the possibilities are endless.
-      </p>
-      <p>
-        Currently, I am working on mobile app development, learning advanced Java, and exploring frameworks like Flutter. I aim to build
-        useful and impactful projects in the future and contribute to the community.
-      </p>
+      <div class="section">
+        <h2>Future Aspirations</h2>
+        <p>
+          I’m excited about the future of mobile app development and am always eager to explore new frameworks,  
+          libraries, and tools. As I continue my journey, I look forward to contributing to open-source projects and collaborating with others in the tech community.
+        </p>
+      </div>
+      <div class="section">
+        <h2>Connect with Me</h2>
+        <p>
+          Feel free to reach out to me through my GitHub, LinkedIn, or via email if you want to collaborate or talk about development!  
+          Let's build something amazing together.
+        </p>
+      </div>
     </div>
 
     <button class="btn-show-more" onclick="toggleText()">Show More</button>
