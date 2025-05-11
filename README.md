@@ -16,13 +16,5 @@ This blog is written with simple **HTML**, **CSS**, and optionally **JavaScript*
 
 ---
 
-## 📄 License
-
-All blog content is open-sourced under the [MIT License](LICENSE).
-
-Feel free to fork or remix with credit.
-
----
-
 > “The best way to learn programming is to build, break, and fix.” – Sayar Kyan
 > 
