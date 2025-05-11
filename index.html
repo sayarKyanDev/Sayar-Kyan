@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Blog – Sayar Kyan</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #006AEE;
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+    .blog-post {
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+    .blog-post h2 {
+      color: #333;
+      font-size: 24px;
+    }
+    .blog-post .date {
+      font-size: 14px;
+      color: #888;
+    }
+    .blog-post p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .read-more {
+      color: #006AEE;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 10px;
+      display: inline-block;
+    }
+    .read-more:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>My Programming Blog</h1>
+    <div id="blog-posts">
+      <!-- Blog posts will be loaded here -->
+    </div>
+  </div>
+
+  <script>
+    // GitHub API endpoint to fetch the list of blog posts from your repo
+    const apiEndpoint = 'https://api.github.com/repos/sayarKyanDev/Sayar-Kyan/contents/posts';
+
+    fetch(apiEndpoint)
+      .then(response => response.json())
+      .then(data => {
+        data.forEach(post => {
+          if (post.name.endsWith('.md')) {
+            const postTitle = post.name.replace('.md', '');
+            const postDate = new Date(post.committer.date).toLocaleDateString();
+            
+            const postElement = document.createElement('div');
+            postElement.classList.add('blog-post');
+            postElement.innerHTML = `
+              <h2>${postTitle}</h2>
+              <p class="date">Published on: ${postDate}</p>
+              <p>Click the link below to read the full post.</p>
+              <a href="${post.download_url}" class="read-more" target="_blank">Read More</a>
+            `;
+            document.getElementById('blog-posts').appendChild(postElement);
+          }
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching blog posts:', error);
+      });
+  </script>
+
+</body>
+</html>
