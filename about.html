@@ -1,156 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me – Sayar Kyan</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hein Ko Ko Aung – Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    /* General body styling */
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f1f1f1;
+    * {
       margin: 0;
       padding: 0;
-      color: #333;
-      line-height: 1.6;
+      box-sizing: border-box;
     }
 
-    /* Main container */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      min-height: 100vh;
+      padding: 50px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .container {
-      max-width: 900px;
-      margin: 50px auto;
-      background: #fff;
+      max-width: 960px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 12px 50px rgba(0,0,0,0.3);
       padding: 40px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
     }
 
-    h1 {
+    .container:hover {
+      transform: translateY(-5px);
+    }
+
+    .profile-header {
       text-align: center;
-      color: #006AEE;
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
-
-    .section {
       margin-bottom: 30px;
     }
 
-    .section h2 {
-      color: #333;
-      font-size: 28px;
+    .profile-header img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
       margin-bottom: 15px;
+      border: 3px solid #00c6ff;
+      box-shadow: 0 4px 15px rgba(0,198,255,0.4);
+    }
+
+    .profile-header h1 {
+      font-size: 2.5rem;
+      color: #00c6ff;
+    }
+
+    .profile-header h3 {
+      font-weight: 300;
+      color: #ccc;
+    }
+
+    .section {
+      margin-top: 30px;
+    }
+
+    .section h2 {
+      font-size: 1.4rem;
+      color: #00c6ff;
+      margin-bottom: 10px;
     }
 
     .section p {
-      font-size: 18px;
-      color: #555;
-      line-height: 1.8;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #ddd;
     }
 
-    /* Button Styling */
-    .btn-show-more {
-      display: inline-block;
-      background-color: #006AEE;
-      color: white;
-      padding: 12px 30px;
-      font-size: 16px;
-      border-radius: 25px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      text-align: center;
-      border: none;
-      margin-top: 20px;
-    }
-
-    .btn-show-more:hover {
-      background-color: #0056b3;
-    }
-
-    .more-text {
-      display: none;
-    }
-
-    /* Responsive Design */
     @media (max-width: 768px) {
       .container {
-        padding: 30px;
+        padding: 25px;
       }
 
-      h1 {
-        font-size: 28px;
+      .profile-header h1 {
+        font-size: 2rem;
       }
 
       .section h2 {
-        font-size: 22px;
+        font-size: 1.2rem;
       }
     }
   </style>
 </head>
 <body>
-
   <div class="container">
-    <h1>About Me</h1>
+    <div class="profile-header">
+      <img src="img/profile.png" alt="Hein Ko Ko Aung">
+      <h1>Hein Ko Ko Aung</h1>
+      <h3>Passionate self-taught programmer from Myanmar, aspiring to become a professional Android developer.</h3>
+    </div>
 
     <div class="section">
-      <h2>Who am I?</h2>
+      <h2>About Me</h2>
       <p>
-        Hi! I’m <strong>Hein Ko Ko Aung</strong>, a passionate self-taught programmer from <strong>Myanmar</strong>.  
-        I’m on a mission to grow my skills and become a professional Android developer.  
-        I started my journey in IT in <strong>2019</strong> when I was just 12 years old. Since then, I’ve been continuously learning and building projects.
+        I started my IT journey in 2019 at the age of 12. Since then, I've been continuously learning and building projects,
+        focusing on Android development using Java, Kotlin, and Flutter.
       </p>
     </div>
 
     <div class="section">
       <h2>My Goal</h2>
       <p>
-        My ultimate goal is to become a proficient Android Developer, building mobile applications that can make a difference.  
-        I strive to create professional, user-friendly applications that provide meaningful solutions to everyday problems.
+        To develop professional, user-friendly Android applications that solve real-world problems and make a meaningful impact.
       </p>
     </div>
 
     <div class="section">
-      <h2>My Experience</h2>
+      <h2>Experience</h2>
       <p>
-        I have worked on various Android applications, constantly improving my skills with Java, Kotlin, and Flutter.  
-        I enjoy solving coding problems, experimenting with new technologies, and learning from every project I undertake.
+        Worked on various Android applications, enhancing skills in Java, Kotlin, and Flutter. Enjoy solving coding challenges and exploring new technologies.
       </p>
     </div>
 
-    <div class="more-text" id="moreText">
-      <div class="section">
-        <h2>Future Aspirations</h2>
-        <p>
-          I’m excited about the future of mobile app development and am always eager to explore new frameworks,  
-          libraries, and tools. As I continue my journey, I look forward to contributing to open-source projects and collaborating with others in the tech community.
-        </p>
-      </div>
-      <div class="section">
-        <h2>Connect with Me</h2>
-        <p>
-          Feel free to reach out to me through my GitHub, LinkedIn, or via email if you want to collaborate or talk about development!  
-          Let's build something amazing together.
-        </p>
-      </div>
+    <div class="section">
+      <h2>Future Aspirations</h2>
+      <p>
+        Excited to delve into new frameworks, contribute to open-source projects, and collaborate with the tech community to build impactful applications.
+      </p>
     </div>
-
-    <button class="btn-show-more" onclick="toggleText()">Show More</button>
   </div>
-
-  <script>
-    function toggleText() {
-      var moreText = document.getElementById("moreText");
-      var btn = document.querySelector(".btn-show-more");
-
-      if (moreText.style.display === "none" || moreText.style.display === "") {
-        moreText.style.display = "block";
-        btn.textContent = "Show Less";
-      } else {
-        moreText.style.display = "none";
-        btn.textContent = "Show More";
-      }
-    }
-  </script>
-
 </body>
 </html>
