@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me – Sayar Kyan</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #006AEE;
+      text-align: center;
+    }
+
+    .about-text {
+      font-size: 18px;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .more-text {
+      display: none;
+      font-size: 18px;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .btn-show-more {
+      display: inline-block;
+      background-color: #006AEE;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-show-more:hover {
+      background-color: #004a99;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>About Me</h1>
+    <p class="about-text">
+      Hello! I'm <strong>Hein Ko Ko Aung</strong>, a young and passionate programmer from <strong>Myanmar</strong>.
+      I started my journey in the world of IT back in <strong>2019</strong> when I was just 12 years old.
+    </p>
+
+    <p class="about-text">
+      Since then, I’ve been learning various programming languages, building small projects, and solving real-world problems
+      I encounter along the way. I enjoy experimenting with new tools and technologies and always strive to improve my skills.
+    </p>
+
+    <div class="more-text" id="moreText">
+      <p>
+        This blog is my personal platform to share my experiences, tips, and mistakes, hoping to help others in their programming
+        journey. Learning programming can be challenging, but it’s also exciting and rewarding when you start solving real problems.
+      </p>
+      <p>
+        I believe that learning by doing is the most powerful method — break things, fix them, and keep growing. The best part about
+        programming is that there's always something new to learn, and the possibilities are endless.
+      </p>
+      <p>
+        Currently, I am working on mobile app development, learning advanced Java, and exploring frameworks like Flutter. I aim to build
+        useful and impactful projects in the future and contribute to the community.
+      </p>
+    </div>
+
+    <button class="btn-show-more" onclick="toggleText()">Show More</button>
+  </div>
+
+  <script>
+    function toggleText() {
+      var moreText = document.getElementById("moreText");
+      var btn = document.querySelector(".btn-show-more");
+
+      if (moreText.style.display === "none" || moreText.style.display === "") {
+        moreText.style.display = "block";
+        btn.textContent = "Show Less";
+      } else {
+        moreText.style.display = "none";
+        btn.textContent = "Show More";
+      }
+    }
+  </script>
+
+</body>
+</html>
