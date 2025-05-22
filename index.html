@@ -4,130 +4,135 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hein Ko Ko Aung – Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      min-height: 100vh;
-      padding: 50px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .container {
-      max-width: 960px;
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      box-shadow: 0 12px 50px rgba(0,0,0,0.3);
-      padding: 40px;
-      transition: all 0.3s ease;
-    }
-
-    .container:hover {
-      transform: translateY(-5px);
-    }
-
-    .profile-header {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .profile-header img {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 15px;
-      border: 3px solid #00c6ff;
-      box-shadow: 0 4px 15px rgba(0,198,255,0.4);
-    }
-
-    .profile-header h1 {
-      font-size: 2.5rem;
-      color: #00c6ff;
-    }
-
-    .profile-header h3 {
-      font-weight: 300;
-      color: #ccc;
-    }
-
-    .section {
-      margin-top: 30px;
-    }
-
-    .section h2 {
-      font-size: 1.4rem;
-      color: #00c6ff;
-      margin-bottom: 10px;
-    }
-
-    .section p {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: #ddd;
-    }
-
-    @media (max-width: 768px) {
-      .container {
-        padding: 25px;
-      }
-
-      .profile-header h1 {
-        font-size: 2rem;
-      }
-
-      .section h2 {
-        font-size: 1.2rem;
-      }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <div class="container">
-    <div class="profile-header">
-      <img src="https://www.dropbox.com/scl/fi/lmyrs39d5f3rdwjy6dyfe/profile.png?rlkey=orf8qpfjm20n5hch6qrmsckw0&st=i0zuo5s9&dl=1" alt="Hein Ko Ko Aung">
-      <h1>Hein Ko Ko Aung</h1>
-      <h3>Passionate self-study programmer from Myanmar, aspiring to become a professional Android developer.</h3>
+  <div class="custom-container container">
+    <div class="profile-header text-center mb-5">
+      <img src="https://www.dropbox.com/scl/fi/lmyrs39d5f3rdwjy6dyfe/profile.png?rlkey=orf8qpfjm20n5hch6qrmsckw0&st=i0zuo5s9&dl=1" alt="Hein Ko Ko Aung Profile Picture" onerror="this.onerror=null;this.src='https://placehold.co/140x140/00bcd4/ffffff?text=Profile';" class="mx-auto d-block">
+      <h1 class="display-4 text-info fw-bold mb-1">Hein Ko Ko Aung</h1>
+      <h3 class="h5 text-secondary fw-normal">Passionate Self-Taught Full-Stack Developer | Android, Web & Laravel/Vue Specialist</h3>
     </div>
 
-    <div class="section">
-      <h2>Who am I?</h2>
-      <p>
-      I’m <strong>Hein Ko Ko Aung</strong>, a passionate self-study programmer from <strong>Myanmar</strong>. I’m on a mission to grow my skills and become a professional Android developer. I started my journey in IT in <strong>2019</strong> when I was just 12 years old. Since then, I’ve been continuously learning and building projects.
+    <div class="section mb-4">
+      <h2 class="section-heading">
+        <i class="fas fa-info-circle me-2"></i> About Me
+      </h2>
+      <p class="text-light mb-2">
+        I’m <strong class="text-white">Hein Ko Ko Aung</strong>, a passionate self-taught developer from <strong class="text-white">Myanmar</strong>. I embarked on my programming journey in <strong class="text-white">2019</strong> at the age of 12 and have since cultivated a strong commitment to learning and building professional software across mobile and web platforms. My goal is to craft efficient, scalable, and user-friendly applications that solve real-world problems and contribute to innovative solutions.
       </p>
     </div>
 
-    <div class="section">
-      <h2>My Goal</h2>
-      <p>
-        My ultimate goal is to become a proficient Android Developer, building mobile applications that can make a difference. I strive to create professional, user-friendly applications that provide meaningful solutions to everyday problems.
-      </p>
+    <hr class="border-top border-dashed border-secondary my-5">
+
+    <div class="section mb-4">
+      <h2 class="section-heading">
+        <i class="fas fa-tools me-2"></i> Skills
+      </h2>
+      <div class="row g-4 mt-3">
+        <div class="col-md-6 col-lg-4">
+          <div class="skill-box">
+            <h3><i class="fas fa-code me-2"></i> Languages</h3>
+            <ul class="list-unstyled">
+              <li class="list-item-bullet">Java (Advanced – Android Development)</li>
+              <li class="list-item-bullet">JavaScript (ES6+)</li>
+              <li class="list-item-bullet">PHP (v8.x)</li>
+              <li class="list-item-bullet">HTML, CSS</li>
+              <li class="list-item-bullet">SQL</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="skill-box">
+            <h3><i class="fas fa-laptop-code me-2"></i> Frontend Development</h3>
+            <ul class="list-unstyled">
+              <li class="list-item-bullet">Vue.js (Vue 2 & Vue 3)</li>
+              <li class="list-item-bullet">Vue CLI, VueX, Pinia</li>
+              <li class="list-item-bullet">jQuery</li>
+              <li class="list-item-bullet">Bootstrap 5, Tailwind CSS</li>
+              <li class="list-item-bullet">Sass/SCSS</li>
+              <li class="list-item-bullet">Responsive Design</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="skill-box">
+            <h3><i class="fas fa-server me-2"></i> Backend Development</h3>
+            <ul class="list-unstyled">
+              <li class="list-item-bullet">Laravel (v10+, including v12)</li>
+              <li class="list-item-bullet">RESTful API Development</li>
+              <li class="list-item-bullet">MySQL Database Design & Management)</li>
+              <li class="list-item-bullet">Authentication & Authorization</li>
+              <li class="list-item-bullet">Basic Node.js (for tooling)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="skill-box">
+            <h3><i class="fas fa-cogs me-2"></i> Tools & Deployment</h3>
+            <ul class="list-unstyled">
+              <li class="list-item-bullet">Git & GitHub (Version Control)</li>
+              <li class="list-item-bullet">Composer, npm, Yarn</li>
+              <li class="list-item-bullet">Docker (Basic understanding)</li>
+              <li class="list-item-bullet">Domain & Hosting Setup</li>
+              <li class="list-item-bullet">Linux Server Administration (Ubuntu/CentOS)</li>
+              <li class="list-item-bullet">CI/CD Concepts</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="skill-box">
+            <h3><i class="fas fa-mobile-alt me-2"></i> Mobile Development</h3>
+            <ul class="list-unstyled">
+              <li class="list-item-bullet">Android Native Development (Java)</li>
+              <li class="list-item-bullet">Material Design</li>
+              <li class="list-item-bullet">REST API Integration</li>
+              <li class="list-item-bullet">SQLite Database</li>
+              <li class="list-item-bullet">Firebase (Authentication, Firestore, Realtime DB)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="skill-box">
+            <h3><i class="fas fa-handshake me-2"></i> Soft Skills</h3>
+            <ul class="list-unstyled">
+              <li class="list-item-bullet">Problem Solving</li>
+              <li class="list-item-bullet">Self-Learning & Adaptability</li>
+              <li class="list-item-bullet">Attention to Detail</li>
+              <li class="list-item-bullet">Effective Communication</li>
+              <li class="list-item-bullet">Time Management & Organization</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="section">
-      <h2>Experience</h2>
-      <p>
-        I have worked on various Android applications, constantly improving my skills with Java, Kotlin, and Flutter. I enjoy solving coding problems, experimenting with new technologies, and learning from every project I undertake.
-      </p>
-    </div>
+    <hr class="border-top border-dashed border-secondary my-5">
 
-    <div class="section">
-      <h2>Future Aspirations</h2>
-      <p>
-         I’m excited about the future of mobile app development and am always eager to explore new frameworks, libraries, and tools. As I continue my journey, I look forward to contributing to open-source projects and collaborating with others in the tech community.
-      </p>
+    <div class="section mb-4">
+      <h2 class="section-heading">
+        <i class="fas fa-envelope me-2"></i> Contact
+      </h2>
+      <div class="d-flex flex-column gap-3 mt-3">
+        <a href="https://sayarkyandev.github.io" target="_blank" class="text-info text-decoration-none d-flex align-items-center gap-2 break-words">
+          <i class="fas fa-globe fs-5"></i> sayarkyandev.github.io
+        </a>
+        <a href="mailto:sayarkyan.dev@gmail.com" class="text-info text-decoration-none d-flex align-items-center gap-2 break-words">
+          <i class="fas fa-envelope fs-5"></i> sayarkyan.dev@gmail.com
+        </a>
+        <a href="https://www.facebook.com/sayarkyan1892007" target="_blank" class="text-info text-decoration-none d-flex align-items-center gap-2 break-words">
+          <i class="fab fa-facebook fs-5"></i> facebook.com/sayarkyan1892007
+        </a>
+        <a href="https://www.linkedin.com/in/sayarkyandev" target="_blank" class="text-info text-decoration-none d-flex align-items-center gap-2 break-words">
+          <i class="fab fa-linkedin fs-5"></i> linkedin.com/in/sayarkyandev
+        </a>
+      </div>
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="./script.js"></script>
 </body>
 </html>
