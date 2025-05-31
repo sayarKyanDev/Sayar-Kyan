@@ -1,349 +1,610 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hein Ko Ko Aung – Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <style>
-    :root {
-      --primary-bg: #1a2a3a;
-      --secondary-bg: #2a3b4c;
-      --card-bg: rgba(42, 59, 76, 0.6);
-      --accent-color: #00bcd4;
-      --text-color: #e0e0e0;
-      --light-text: #bdbdbd;
-      --border-color: rgba(255, 255, 255, 0.1);
-      --shadow-light: rgba(0, 0, 0, 0.2);
-      --shadow-dark: rgba(0, 0, 0, 0.4);
-    }
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Hein Ko Ko Aung – Portfolio</title>
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, var(--primary-bg), #0f1c2b, #203a43);
-      color: var(--text-color);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      line-height: 1.6;
-      padding: 3rem 1rem;
-    }
+    <!-- Google Fonts: Poppins (for text), Oswald (for headings) -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- AOS (Animate On Scroll) CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    .custom-container {
-      max-width: 960px;
-      background: var(--card-bg);
-      backdrop-filter: blur(15px);
-      border-radius: 20px;
-      border: 1px solid var(--border-color);
-      box-shadow: 0 15px 50px var(--shadow-dark);
-      padding: 40px;
-      transition: all 0.4s ease-in-out;
-      transform-style: preserve-3d;
-    }
+    <style>
+        :root {
+            --primary-bg: #0a192f; /* Darker background */
+            --secondary-bg: #112240;
+            --card-bg: rgba(17, 34, 64, 0.8); /* Slightly transparent card */
+            --accent-color: #64ffda; /* Cyan/Aqua accent */
+            --light-accent: #00bcd4; /* Original accent for some elements */
+            --text-color: #ccd6f6; /* Light grayish blue */
+            --light-text: #8892b0; /* Lighter grayish blue */
+            --border-color: rgba(100, 255, 218, 0.2); /* Accent border */
+            --shadow-light: rgba(2, 12, 27, 0.7);
+            --shadow-dark: rgba(2, 12, 27, 0.9);
+            --gradient-start: #0a192f;
+            --gradient-end: #112240;
+        }
 
-    .custom-container:hover {
-      transform: translateY(-8px) rotateX(1deg) rotateY(1deg);
-      box-shadow: 0 20px 60px var(--shadow-dark);
-    }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.6;
+            padding: 4rem 1rem;
+            overflow-x: hidden; /* Prevent horizontal scroll from animations */
+        }
 
-    .profile-header img {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 20px;
-      border: 4px solid var(--accent-color);
-      box-shadow: 0 6px 20px rgba(0, 188, 212, 0.5);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+        .custom-container {
+            max-width: 1000px; /* Slightly wider container */
+            background: var(--card-bg);
+            backdrop-filter: blur(10px); /* Slightly less blur */
+            border-radius: 15px; /* Slightly less rounded */
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px var(--shadow-dark); /* Updated shadow */
+            padding: 50px; /* More padding */
+            transition: all 0.4s ease-in-out;
+        }
 
-    .profile-header img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 25px rgba(0, 188, 212, 0.7);
-    }
+        .custom-container:hover {
+             /* Removed 3D transform for simplicity and wider browser compatibility */
+             transform: translateY(-5px);
+             box-shadow: 0 15px 40px var(--shadow-dark);
+        }
 
-    .section-heading {
-      font-size: 1.8rem;
-      color: var(--accent-color);
-      margin-bottom: 15px;
-      padding-bottom: 8px;
-      border-bottom: 2px solid var(--accent-color);
-      display: inline-block;
-      position: relative;
-      font-weight: 600;
-    }
+        .profile-header img {
+            width: 150px; /* Slightly larger image */
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 5px solid var(--accent-color); /* Thicker accent border */
+            box-shadow: 0 0 20px rgba(100, 255, 218, 0.6); /* Accent glow */
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
 
-    .section-heading::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(to right, var(--accent-color), transparent);
-    }
+        .profile-header img:hover {
+            transform: scale(1.08) rotate(3deg); /* More dynamic hover */
+            box-shadow: 0 0 30px rgba(100, 255, 218, 0.8);
+        }
 
-    .skill-box {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid var(--border-color);
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 8px 25px var(--shadow-light);
-      transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-    }
+        .profile-header h1 {
+            font-family: 'Oswald', sans-serif;
+            color: var(--accent-color); /* Heading color */
+            font-size: 3rem; /* Larger heading */
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
 
-    .skill-box:hover {
-      transform: translateY(-7px);
-      background: rgba(255, 255, 255, 0.12);
-      box-shadow: 0 12px 35px var(--shadow-dark);
-    }
+        .profile-header h3 {
+            color: var(--light-text); /* Subheading color */
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-top: 0;
+        }
 
-    .skill-box h3 {
-      color: var(--accent-color);
-      font-size: 1.3rem;
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+        .section {
+            margin-bottom: 60px; /* More space between sections */
+        }
 
-    .skill-box h3 i {
-      color: var(--accent-color);
-      font-size: 1.1em;
-    }
+        .section-heading {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.2rem; /* Larger section headings */
+            color: var(--text-color); /* Heading color */
+            margin-bottom: 25px; /* More space below heading */
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary-bg); /* Subtle border */
+            position: relative;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
 
-    .list-item-bullet {
-      margin-bottom: 10px;
-      color: var(--light-text);
-      display: flex;
-      align-items: center;
-    }
+         .section-heading i {
+             color: var(--accent-color); /* Icon color */
+             margin-right: 15px;
+             font-size: 1.5em;
+         }
 
-    .list-item-bullet::before {
-      content: '\2022';
-      color: var(--accent-color);
-      display: inline-block;
-      width: 1em;
-      margin-left: -1em;
-    }
+        .section-heading::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 80px; /* Shorter accent line */
+            height: 2px;
+            background-color: var(--accent-color); /* Accent color line */
+        }
 
-    .contact-links a {
-      color: var(--accent-color);
-      text-decoration: none;
-      font-size: 1.1rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      word-break: break-word;
-      transition: color 0.3s ease, transform 0.2s ease;
-    }
+        .section p {
+            font-size: 1.05rem; /* Slightly larger text */
+            color: var(--light-text); /* Paragraph text color */
+        }
 
-    .contact-links a i {
-      font-size: 1.2em;
-    }
+        .skill-box {
+            background: var(--secondary-bg); /* Darker card background */
+            border: 1px solid var(--border-color);
+            padding: 30px; /* More padding */
+            border-radius: 10px; /* Less rounded */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%; /* Ensure boxes have equal height in grid */
+            display: flex;
+            flex-direction: column;
+        }
 
-    .contact-links a:hover {
-      color: #7ef9ff;
-      transform: translateX(5px);
-    }
+        .skill-box:hover {
+            transform: translateY(-5px); /* Less dramatic lift */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            background-color: #1a2a4a; /* Slightly lighter on hover */
+        }
 
-    @media (max-width: 768px) {
-      .custom-container {
-        padding: 30px 20px;
-        border-radius: 15px;
-      }
-      .profile-header h1 {
-        font-size: 2.2rem;
-      }
-      .profile-header h3 {
-        font-size: 1rem;
-      }
-      .section-heading {
-        font-size: 1.5rem;
-      }
-      .skill-box {
-        padding: 20px;
-      }
-      .skill-box h3 {
-        font-size: 1.2rem;
-      }
-      .section p {
-        font-size: 0.95rem;
-      }
-      .contact-links a {
-        font-size: 1rem;
-      }
-    }
+        .skill-box h3 {
+            color: var(--text-color); /* Skill heading color */
+            font-size: 1.4rem; /* Larger skill heading */
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            gap: 12px;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 10px;
+        }
+         .skill-box h3 i {
+             color: var(--accent-color); /* Skill icon color */
+             font-size: 1.2em;
+         }
 
-    @media (max-width: 480px) {
-      .custom-container {
-        padding: 25px 15px;
-      }
-      .profile-header img {
-        width: 120px;
-        height: 120px;
-      }
-      .profile-header h1 {
-        font-size: 1.8rem;
-      }
-      .profile-header h3 {
-        font-size: 0.9rem;
-      }
-      .section-heading {
-        font-size: 1.3rem;
-      }
-    }
-  </style>
+        .skill-box ul {
+            padding-left: 0;
+            margin-bottom: 0; /* Remove default bottom margin */
+            flex-grow: 1; /* Make list take available space */
+        }
+
+        .list-item-bullet {
+            margin-bottom: 8px; /* Less space between list items */
+            color: var(--light-text);
+            display: flex;
+            align-items: flex-start; /* Align bullet and text nicely */
+            font-size: 1.05rem;
+        }
+
+        .list-item-bullet::before {
+            content: '\203A'; /* Right arrow bullet */
+            color: var(--accent-color);
+            display: inline-block;
+            margin-right: 8px; /* Space between bullet and text */
+            font-weight: bold;
+            line-height: inherit; /* Inherit line height for alignment */
+        }
+         .list-item-bullet:last-child {
+             margin-bottom: 0; /* Remove margin from last item */
+         }
+
+
+        /* Project Card Styles (Placeholder) */
+        .project-card {
+            background: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            padding: 25px;
+            margin-bottom: 30px; /* Space between project cards */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+             height: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+             background-color: #1a2a4a;
+        }
+
+        .project-card h4 {
+            color: var(--text-color);
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            border-bottom: 1px dashed var(--border-color);
+             padding-bottom: 8px;
+        }
+
+        .project-card p {
+            color: var(--light-text);
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .project-card .project-tech span {
+            display: inline-block;
+            background-color: rgba(100, 255, 218, 0.1); /* Accent light background */
+            color: var(--accent-color);
+            font-size: 0.85rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .project-card .project-links a {
+            color: var(--light-text);
+            font-size: 1.1rem;
+            margin-right: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .project-card .project-links a:hover {
+            color: var(--accent-color);
+        }
+
+
+        /* Contact Links */
+        .contact-links a {
+            color: var(--light-text); /* Subtle initial color */
+            text-decoration: none;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 15px; /* More space */
+            word-break: break-word;
+            transition: color 0.3s ease, transform 0.2s ease;
+             padding: 8px 0; /* Add some vertical padding */
+        }
+
+        .contact-links a i {
+            color: var(--accent-color); /* Accent color for icons */
+            font-size: 1.4em; /* Larger icons */
+        }
+
+        .contact-links a:hover {
+            color: var(--accent-color); /* Accent color on hover */
+            transform: translateX(8px); /* More noticeable slide */
+        }
+
+        hr {
+            border-color: var(--secondary-bg) !important; /* Darker HR */
+             margin: 60px 0 !important; /* More space around HR */
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .custom-container {
+                padding: 40px 30px;
+            }
+            .profile-header h1 {
+                font-size: 2.5rem;
+            }
+            .profile-header h3 {
+                font-size: 1.1rem;
+            }
+            .section-heading {
+                font-size: 1.8rem;
+            }
+            .skill-box, .project-card {
+                padding: 25px;
+            }
+            .skill-box h3 {
+                font-size: 1.3rem;
+            }
+            .section p {
+                font-size: 1rem;
+            }
+            .contact-links a {
+                font-size: 1rem;
+            }
+             hr {
+                 margin: 40px 0 !important;
+             }
+        }
+
+        @media (max-width: 480px) {
+            .custom-container {
+                padding: 30px 20px;
+                border-radius: 10px;
+            }
+            .profile-header img {
+                width: 120px;
+                height: 120px;
+            }
+            .profile-header h1 {
+                font-size: 2rem;
+            }
+            .profile-header h3 {
+                font-size: 1rem;
+            }
+            .section-heading {
+                font-size: 1.6rem;
+                margin-bottom: 20px;
+            }
+             .section-heading i {
+                 margin-right: 10px;
+                 font-size: 1.2em;
+             }
+            .skill-box, .project-card {
+                padding: 20px;
+            }
+            .skill-box h3 {
+                font-size: 1.2rem;
+            }
+             .project-card h4 {
+                 font-size: 1.4rem;
+             }
+             .section {
+                 margin-bottom: 40px;
+             }
+             hr {
+                 margin: 30px 0 !important;
+             }
+        }
+    </style>
 </head>
 <body>
-  <div class="custom-container container">
-    <div class="profile-header text-center mb-5">
-      <img src="https://www.dropbox.com/scl/fi/lmyrs39d5f3rdwjy6dyfe/profile.png?rlkey=orf8qpfjm20n5hch6qrmsckw0&st=i0zuo5s9&dl=1" alt="Hein Ko Ko Aung Profile Picture" onerror="this.onerror=null;this.src='https://placehold.co/140x140/00bcd4/ffffff?text=Profile';" class="mx-auto d-block">
-      <h1 class="display-4 text-info fw-bold mb-1">Hein Ko Ko Aung</h1>
-      <h3 class="h5 text-secondary fw-normal">Passionate Self-Taught Full-Stack Developer | Android, Web & Laravel/Vue Specialist</h3>
+<div class="custom-container container">
+    <!-- Profile Header -->
+    <div class="profile-header text-center mb-5" data-aos="fade-down">
+        <!-- Profile Image - Replace src with your actual image URL -->
+        <img src="https://www.dropbox.com/scl/fi/lmyrs39d5f3rdwjy6dyfe/profile.png?rlkey=orf8qpfjm20n5hch6qrmsckw0&st=i0zuo5s9&dl=1"
+             alt="Hein Ko Ko Aung Profile Picture"
+             onerror="this.onerror=null;this.src='https://via.placeholder.com/150/0a192f/64ffda?text=Profile';"
+             class="mx-auto d-block">
+        <h1>Hein Ko Ko Aung</h1>
+        <h3>Passionate Self-Taught Full-Stack Developer | Android, Web & Laravel/Vue Specialist</h3>
     </div>
 
-    <div class="section mb-4">
-      <h2 class="section-heading">
-        <i class="fas fa-info-circle me-2"></i> About Me
-      </h2>
-      <p class="text-light mb-2">
-        I’m <strong class="text-white">Hein Ko Ko Aung</strong>, a passionate self-taught developer from <strong class="text-white">Myanmar</strong>. I embarked on my programming journey in <strong class="text-white">2019</strong> at the age of 12 and have since cultivated a strong commitment to learning and building professional software across mobile and web platforms. My goal is to craft efficient, scalable, and user-friendly applications that solve real-world problems and contribute to innovative solutions.
-      </p>
+    <hr>
+
+    <!-- About Me Section -->
+    <div class="section" data-aos="fade-up">
+        <h2 class="section-heading">
+            <i class="fas fa-user-circle"></i> About Me
+        </h2>
+        <p>
+            I’m <strong style="color:var(--accent-color);">Hein Ko Ko Aung</strong>, a passionate self-taught developer from <strong style="color:var(--accent-color);">Myanmar</strong>. I embarked on my programming journey in <strong style="color:var(--accent-color);">2019</strong> at the age of 12 and have since cultivated a strong commitment to learning and building professional software across mobile and web platforms. My goal is to craft efficient, scalable, and user-friendly applications that solve real-world problems and contribute to innovative solutions.
+        </p>
     </div>
 
-    <hr class="border-top border-dashed border-secondary my-5">
+    <hr>
 
-    <div class="section mb-4">
-      <h2 class="section-heading">
-        <i class="fas fa-tools me-2"></i> Skills
-      </h2>
-      <div class="row g-4 mt-3">
-        <div class="col-md-6 col-lg-4">
-          <div class="skill-box">
-            <h3><i class="fas fa-code me-2"></i> Languages</h3>
-            <ul class="list-unstyled">
-              <li class="list-item-bullet">Java (Advanced – Android Development)</li>
-              <li class="list-item-bullet">JavaScript (ES6+)</li>
-              <li class="list-item-bullet">PHP (v8.x)</li>
-              <li class="list-item-bullet">HTML, CSS</li>
-              <li class="list-item-bullet">SQL</li>
-            </ul>
-          </div>
+    <!-- Skills Section -->
+    <div class="section">
+        <h2 class="section-heading" data-aos="fade-up">
+            <i class="fas fa-tools"></i> Skills
+        </h2>
+        <div class="row g-4 mt-3">
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="skill-box">
+                    <h3><i class="fas fa-code"></i> Languages</h3>
+                    <ul class="list-unstyled">
+                        <li class="list-item-bullet">Java (Advanced – Android Development)</li>
+                        <li class="list-item-bullet">JavaScript (ES6+)</li>
+                        <li class="list-item-bullet">PHP (v8.x)</li>
+                        <li class="list-item-bullet">HTML, CSS</li>
+                        <li class="list-item-bullet">SQL</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="skill-box">
+                    <h3><i class="fas fa-laptop-code"></i> Frontend Dev</h3>
+                    <ul class="list-unstyled">
+                        <li class="list-item-bullet">Vue.js (Vue 2 & Vue 3)</li>
+                        <li class="list-item-bullet">Vue CLI, VueX, Pinia</li>
+                        <li class="list-item-bullet">jQuery</li>
+                        <li class="list-item-bullet">Bootstrap 5, Tailwind CSS</li>
+                        <li class="list-item-bullet">Sass/SCSS</li>
+                        <li class="list-item-bullet">Responsive Design</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="skill-box">
+                    <h3><i class="fas fa-server"></i> Backend Dev</h3>
+                    <ul class="list-unstyled">
+                        <li class="list-item-bullet">Laravel (v10+, including v12)</li>
+                        <li class="list-item-bullet">RESTful API Development</li>
+                        <li class="list-item-bullet">MySQL Database</li>
+                        <li class="list-item-bullet">Authentication & Authorization</li>
+                        <li class="list-item-bullet">Basic Node.js</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="skill-box">
+                    <h3><i class="fas fa-cogs"></i> Tools & Deploy</h3>
+                    <ul class="list-unstyled">
+                        <li class="list-item-bullet">Git & GitHub</li>
+                        <li class="list-item-bullet">Composer, npm, Yarn</li>
+                        <li class="list-item-bullet">Docker (Basic)</li>
+                        <li class="list-item-bullet">Domain & Hosting Setup</li>
+                        <li class="list-item-bullet">Linux Server Admin</li>
+                        <li class="list-item-bullet">CI/CD Concepts</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="skill-box">
+                    <h3><i class="fas fa-network-wired"></i> Network & Services</h3>
+                    <ul class="list-unstyled">
+                        <li class="list-item-bullet">Ruijie Network Device</li>
+                        <li class="list-item-bullet">Starlink Service</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="skill-box">
+                    <h3><i class="fas fa-shield-alt"></i> Security & Recovery</h3>
+                    <ul class="list-unstyled">
+                        <li class="list-item-bullet">Phishing Awareness</li>
+                        <li class="list-item-bullet">Data Recovery Techniques</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="skill-box">
+                    <h3><i class="fas fa-mobile-alt"></i> Mobile Dev</h3>
+                    <ul class="list-unstyled">
+                        <li class="list-item-bullet">Android Native (Java)</li>
+                        <li class="list-item-bullet">Material Design</li>
+                        <li class="list-item-bullet">REST API Integration</li>
+                        <li class="list-item-bullet">SQLite Database</li>
+                        <li class="list-item-bullet">Firebase</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="skill-box">
+                    <h3><i class="fas fa-handshake"></i> Soft Skills</h3>
+                    <ul class="list-unstyled">
+                        <li class="list-item-bullet">Problem Solving</li>
+                        <li class="list-item-bullet">Self-Learning</li>
+                        <li class="list-item-bullet">Attention to Detail</li>
+                        <li class="list-item-bullet">Communication</li>
+                        <li class="list-item-bullet">Time Management</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="skill-box">
-            <h3><i class="fas fa-laptop-code me-2"></i> Frontend Development</h3>
-            <ul class="list-unstyled">
-              <li class="list-item-bullet">Vue.js (Vue 2 & Vue 3)</li>
-              <li class="list-item-bullet">Vue CLI, VueX, Pinia</li>
-              <li class="list-item-bullet">jQuery</li>
-              <li class="list-item-bullet">Bootstrap 5, Tailwind CSS</li>
-              <li class="list-item-bullet">Sass/SCSS</li>
-              <li class="list-item-bullet">Responsive Design</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="skill-box">
-            <h3><i class="fas fa-server me-2"></i> Backend Development</h3>
-            <ul class="list-unstyled">
-              <li class="list-item-bullet">Laravel (v10+, including v12)</li>
-              <li class="list-item-bullet">RESTful API Development</li>
-              <li class="list-item-bullet">MySQL Database Design & Management)</li>
-              <li class="list-item-bullet">Authentication & Authorization</li>
-              <li class="list-item-bullet">Basic Node.js (for tooling)</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="skill-box">
-            <h3><i class="fas fa-cogs me-2"></i> Tools & Deployment</h3>
-            <ul class="list-unstyled">
-              <li class="list-item-bullet">Git & GitHub (Version Control)</li>
-              <li class="list-item-bullet">Composer, npm, Yarn</li>
-              <li class="list-item-bullet">Docker (Basic understanding)</li>
-              <li class="list-item-bullet">Domain & Hosting Setup</li>
-              <li class="list-item-bullet">Linux Server Administration</li>
-              <li class="list-item-bullet">CI/CD Concepts</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="skill-box">
-            <h3><i class="fas fa-network-wired me-2"></i> Network & Services</h3>
-            <ul class="list-unstyled">
-              <li class="list-item-bullet">Ruijie Network Device Management</li>
-              <li class="list-item-bullet">Starlink Service Configuration & Support</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="skill-box">
-            <h3><i class="fas fa-shield-alt me-2"></i> Security & Recovery</h3>
-            <ul class="list-unstyled">
-              <li class="list-item-bullet">Phishing Attack Awareness & Prevention</li>
-              <li class="list-item-bullet">Data Recovery Techniques</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="skill-box">
-            <h3><i class="fas fa-mobile-alt me-2"></i> Mobile Development</h3>
-            <ul class="list-unstyled">
-              <li class="list-item-bullet">Android Native Development (Java)</li>
-              <li class="list-item-bullet">Material Design</li>
-              <li class="list-item-bullet">REST API Integration</li>
-              <li class="list-item-bullet">SQLite Database</li>
-              <li class="list-item-bullet">Firebase (Authentication, Firestore, Realtime DB)</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="skill-box">
-            <h3><i class="fas fa-handshake me-2"></i> Soft Skills</h3>
-            <ul class="list-unstyled">
-              <li class="list-item-bullet">Problem Solving</li>
-              <li class="list-item-bullet">Self-Learning & Adaptability</li>
-              <li class="list-item-bullet">Attention to Detail</li>
-              <li class="list-item-bullet">Effective Communication</li>
-              <li class="list-item-bullet">Time Management & Organization</li>
-            </ul>
-          </div>
-        </div>
-      </div>
     </div>
 
-    <hr class="border-top border-dashed border-secondary my-5">
+    <hr>
 
-    <div class="section mb-4">
-      <h2 class="section-heading">
-        <i class="fas fa-envelope me-2"></i> Contact
-      </h2>
-      <div class="d-flex flex-column gap-3 mt-3">
-        <a href="https://sayarkyandev.github.io" target="_blank" class="text-info text-decoration-none d-flex align-items-center gap-2 break-words">
-          <i class="fas fa-globe fs-5"></i> sayarkyandev.github.io
-        </a>
-        <a href="mailto:sayarkyan.dev@gmail.com" class="text-info text-decoration-none d-flex align-items-center gap-2 break-words">
-          <i class="fas fa-envelope fs-5"></i> sayarkyan.dev@gmail.com
-        </a>
-        <a href="https://www.facebook.com/sayarkyan1892007" target="_blank" class="text-info text-decoration-none d-flex align-items-center gap-2 break-words">
-          <i class="fab fa-facebook fs-5"></i> facebook.com/sayarkyan1892007
-        </a>
-        <a href="https://www.linkedin.com/in/sayarkyandev" target="_blank" class="text-info text-decoration-none d-flex align-items-center gap-2 break-words">
-          <i class="fab fa-linkedin fs-5"></i> linkedin.com/in/sayarkyandev
-        </a>
-      </div>
+    <!-- Projects Section (Placeholder) -->
+    <div class="section">
+        <h2 class="section-heading" data-aos="fade-up">
+            <i class="fas fa-project-diagram"></i> Projects
+        </h2>
+        <div class="row mt-4">
+            <!-- Example Project Card 1 -->
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+                <div class="project-card">
+                    <h4>Project Title One</h4>
+                    <p>Brief description of Project One. Mention its purpose and key features.</p>
+                    <!-- You can add an image here if needed -->
+                    <!-- <img src="path/to/project1-image.jpg" alt="Project One Screenshot" class="img-fluid mb-3 rounded"> -->
+                    <div class="project-tech mb-3">
+                        <span>Laravel</span>
+                        <span>Vue.js</span>
+                        <span>MySQL</span>
+                        <span>Bootstrap</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="#" target="_blank" title="GitHub Repo"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example Project Card 2 -->
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="project-card">
+                    <h4>Project Title Two</h4>
+                    <p>Brief description of Project Two. Highlight your role and contribution.</p>
+                     <!-- You can add an image here if needed -->
+                    <div class="project-tech mb-3">
+                        <span>Android (Java)</span>
+                        <span>Firebase</span>
+                        <span>REST API</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                        <!-- <a href="#" target="_blank" title="GitHub Repo"><i class="fab fa-github"></i></a> -->
+                         <!-- No GitHub if private -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example Project Card 3 -->
+             <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+                <div class="project-card">
+                    <h4>Project Title Three</h4>
+                    <p>Brief description of Project Three. What problem does it solve?</p>
+                     <!-- You can add an image here if needed -->
+                    <div class="project-tech mb-3">
+                        <span>PHP</span>
+                        <span>jQuery</span>
+                        <span>Tailwind CSS</span>
+                    </div>
+                    <div class="project-links">
+                         <!-- <a href="#" target="_blank" title="Live Demo"><i class="fas fa-external-link-alt"></i></a> -->
+                        <a href="#" target="_blank" title="GitHub Repo"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more project cards here following the same structure -->
+
+        </div>
+         <div class="text-center mt-4">
+             <!-- Optional: Link to a dedicated projects page if you have many -->
+             <!-- <a href="projects.html" class="btn btn-outline-info">View All Projects <i class="fas fa-arrow-right ms-2"></i></a> -->
+         </div>
     </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      console.log('Portfolio page loaded successfully!');
+
+    <hr>
+
+    <!-- Contact Section -->
+    <div class="section" data-aos="fade-up">
+        <h2 class="section-heading">
+            <i class="fas fa-envelope"></i> Contact
+        </h2>
+        <div class="d-flex flex-column gap-3 mt-3 contact-links">
+            <!-- Your Website -->
+            <a href="https://sayarkyandev.github.io" target="_blank">
+                <i class="fas fa-globe"></i> Website: sayarkyandev.github.io
+            </a>
+            <!-- Email -->
+            <a href="mailto:sayarkyan.dev@gmail.com">
+                <i class="fas fa-envelope"></i> Email: sayarkyan.dev@gmail.com
+            </a>
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/sayarkyan1892007" target="_blank">
+                <i class="fab fa-facebook"></i> Facebook: facebook.com/sayarkyan1892007
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/sayarkyandev" target="_blank">
+                <i class="fab fa-linkedin"></i> LinkedIn: linkedin.com/in/sayarkyandev
+            </a>
+             <!-- Optional: Add other links like GitHub, Twitter, etc. -->
+             <!--
+             <a href="https://github.com/yourusername" target="_blank">
+                 <i class="fab fa-github"></i> GitHub: github.com/yourusername
+             </a>
+             <a href="https://twitter.com/yourusername" target="_blank">
+                 <i class="fab fa-twitter"></i> Twitter: twitter.com/yourusername
+             </a>
+             -->
+        </div>
+    </div>
+
+</div>
+
+<!-- Bootstrap Bundle JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    // Initialize AOS
+    AOS.init({
+        duration: 1000, // Animation duration in milliseconds
+        once: true, // Whether animation should happen only once - while scrolling down
     });
-  </script>
+
+    // Basic console log on load
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('Enhanced Portfolio page loaded successfully!');
+    });
+</script>
 </body>
 </html>
